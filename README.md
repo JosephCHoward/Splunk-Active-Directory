@@ -34,6 +34,19 @@ The static IP address is applied to the server:
 
 ![image](https://github.com/user-attachments/assets/6577b496-4ac2-46f4-821c-6c0d8f072b0a)
 
+Splunk is configured to listen on port 9997 and the Splunk interface is accessed on port 8000. An "endpoint" index is created to receive logs forwarded from the Active Directory server and the Windows workstation.
+
+
+
+
+### Active Directory Server
+Active Directory services were installed and a domain created (lab.local). A "Workstations" organizational unit was created and the Windows 10 workstation added to it.
+
+![image](https://github.com/user-attachments/assets/b56fad45-ac03-4667-b439-9df2b56c34cc)
+
+Organizational units were created for IT and HR and two users added to each unit.
+
+![image](https://github.com/user-attachments/assets/8d8d0250-283f-402a-b5bd-87b3bead550d)
 
 
 
