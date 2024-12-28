@@ -3,14 +3,14 @@
 Instructional videos for this project can be found in a 5-part series on the <a href = "https://www.youtube.com/@MyDFIR">MyDFIR YouTube channel</a>. The video for part 1 is <a href = "https://www.youtube.com/watch?v=5OessbOgyEo&list=PLG6KGSNK4PuBWmX9NykU0wnWamjxdKhDJ&index=13"> here</a>. 
 
 This project was done using VirtualBox and 4 virtual machines in a NAT network. The main components of the project are:
-- Windows Server 2022
+- Windows Server 2022 (AD-DC10)
   - Install Active Directory services on a Windows 2022 server and create users.
   - Install and configure Splunk Universal Forwarder.
   - Install and configure Sysmon to forward events to Splunk.
 - Splunk Server
   - Install and configure Splunk to receive logs from the Windows server and Windows workstation.
   - Use Splunk to identify attacks in forwarded logs.
-- Windows 10 Workstation
+- Windows 10 Workstation (Target-PC)
   - Add the Windows 10 workstation to the Active Directory domain.
   - Install and configure Splunk Universal Forwarder.
   - Install and configure Sysmon to forward events to Splunk.
