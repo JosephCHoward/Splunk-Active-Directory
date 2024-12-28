@@ -20,7 +20,7 @@ This project was done using VirtualBox and 4 virtual machines in a NAT network. 
 
 ## Network Topology
 
-![image](https://github.com/user-attachments/assets/836ee6c5-181e-44c7-a3c9-177003537912)
+![image](https://github.com/user-attachments/assets/13e6646d-e830-487e-b499-af6f4b548cbb)
 
 ## Project Highlights
 
