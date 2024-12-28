@@ -34,8 +34,9 @@ The static IP address is applied to the server:
 
 ![image](https://github.com/user-attachments/assets/6577b496-4ac2-46f4-821c-6c0d8f072b0a)
 
-Splunk is configured to listen on port 9997 and the Splunk interface is accessed on port 8000. An "endpoint" index is created to receive logs forwarded from the Active Directory server and the Windows workstation.
+Splunk is configured to listen on port 9997 and the Splunk interface is accessed via a web browser at 10.0.10.10 on port 8000. An "endpoint" index is created to receive logs forwarded from the Active Directory server and the Windows workstation.
 
+![image](https://github.com/user-attachments/assets/b45d2a65-addc-45c8-8c39-63e69950bc8b)
 
 
 
@@ -48,5 +49,22 @@ Organizational units were created for IT and HR and two users added to each unit
 
 ![image](https://github.com/user-attachments/assets/8d8d0250-283f-402a-b5bd-87b3bead550d)
 
+### Kali Linux Brute Force Attack
+
+RDP was enabled on the Windows 10 workstation and from Kali Linux a brute force attack was conducted against the Windows 10 workstation using <a href = "https://www.kali.org/tools/crowbar/"> Crowbar</a>. The attack targeted the user Mary Weaver (mweaver). Twenty passwords were extracted to passwords.txt from the rockyou.txt passwords list and used as the list for the brute force attack. In order to register a successful attack, Mary Weaver's password was added to passwords.txt. 
+
+![image](https://github.com/user-attachments/assets/fd90a57d-c9f1-4572-80d4-b1b4597452c1)
+
+Splunk registered 23 events related to mweaver:
+
+![image](https://github.com/user-attachments/assets/b9bfdbdd-ad08-42e9-92f1-9e86345e0a00)
+
+Windows event <a href = "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625"> code 4625</a> is for failed logon attempts. Splunk recorded 20 failed login attemtps for mweaver's account, which is the number of incorrect passwords contained in the passwords.txt file:
+
+![image](https://github.com/user-attachments/assets/ecacce7e-251e-4966-8528-3b8c98ab480e)
+
+
+
+Splunk 
 
 
