@@ -53,7 +53,8 @@ Organizational units were created for IT and HR and two users added to each unit
 
 RDP was enabled on the Windows 10 workstation and from Kali Linux a brute force attack was conducted against the Windows 10 workstation using <a href = "https://www.kali.org/tools/crowbar/"> Crowbar</a>. The attack targeted the user Mary Weaver (mweaver). Twenty passwords were extracted to passwords.txt from the rockyou.txt passwords list and used as the list for the brute force attack. In order to register a successful attack, Mary Weaver's password was added to passwords.txt. 
 
-![image](https://github.com/user-attachments/assets/fd90a57d-c9f1-4572-80d4-b1b4597452c1)
+![image](https://github.com/user-attachments/assets/0bd61a38-c7e5-4a9a-8348-1fdb49e49b89)
+
 
 Splunk registered 23 events related to mweaver:
 
@@ -63,8 +64,34 @@ Windows event <a href = "https://learn.microsoft.com/en-us/previous-versions/win
 
 ![image](https://github.com/user-attachments/assets/ecacce7e-251e-4966-8528-3b8c98ab480e)
 
+### Atomic Red Team Simulated Attacks
+
+<a href = "https://www.atomicredteam.io/">Atomic Red Team</a> is a library of simple, focused tests mapped to the <a href = "https://attack.mitre.org/">MITRE ATT&CK matrix</a>. It is typically used to test whether an organization's security controls are detecting attacks.
+
+In this lab, Atomic Red Team was installed on the Winodws 10 workstation and a couple of attacks run and detected in Splunk.
+
+#### Create Local Account (T1136.001)
+
+One technique attackers use to establish persistence on a compromised host is to create new local accounts. This technique, T1136.001 in the MITRE framework, is described <a href = "https://attack.mitre.org/techniques/T1136/001/">here</a>. The Atomic Red Team <a href = "https://www.atomicredteam.io/atomic-red-team/atomics/T1136.001">simulates this technique</a> in various ways, depending on the system and OS. In this lab, Atomic Red Team used "NewLocalUser" as the account to be created:
+
+![image](https://github.com/user-attachments/assets/5ca9d06d-8539-4a3e-aa3b-83f6f0c40436)
+
+We can see this event recorded in Splunk:
+
+![image](https://github.com/user-attachments/assets/d035c83d-5229-421a-95ee-cac71037fa77)
+
+#### File and Directory Permissions Modification (T1222.001)
+
+In order to evade access control lists and access protected files, attackers may attempt to modify file or directory permissions. MITRE describes this technique (T1222.001) <a href = "https://attack.mitre.org/techniques/T1222/001/">here</a>.
+
+In the Atomic Red Team simulation, one of the files which it attempts to modify is T1222.001_attrib as seen here:
+
+![image](https://github.com/user-attachments/assets/01f917b5-b902-4b5c-a038-b0c7ba6c273b)
+
+If we search for this string in Splunk, we can identify the events:
+
+![image](https://github.com/user-attachments/assets/96b078a4-9644-4d51-9104-f1a7efa53264)
 
 
-Splunk 
 
 
