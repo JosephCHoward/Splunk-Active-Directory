@@ -34,7 +34,7 @@ The static IP address is applied to the server:
 
 ![image](https://github.com/user-attachments/assets/6577b496-4ac2-46f4-821c-6c0d8f072b0a)
 
-Splunk is configured to listen on port 9997 and the Splunk interface is accessed via a web browser at 10.0.10.10 on port 8000. An "endpoint" index is created to receive logs forwarded from the Active Directory server and the Windows workstation.
+Splunk was configured to listen on port 9997 and the Splunk interface to be accessed via a web browser at 10.0.10.10 on port 8000. An "endpoint" index was created to receive logs forwarded from the Active Directory server and the Windows workstation.
 
 ![image](https://github.com/user-attachments/assets/b45d2a65-addc-45c8-8c39-63e69950bc8b)
 
